@@ -16,7 +16,7 @@ Sets up my Ubuntu/Debian environment for development.
 
 2. Run the following command in bash
    ```sh
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/cathalnoonan/dotfiles_ubuntu-and-debian/HEAD/setup.sh)"
+   /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/cathalnoonan/dotfiles_ubuntu-and-debian/HEAD/setup.sh )"
    ```
    > **Note**:
    > - Setup will take a few minutes.
