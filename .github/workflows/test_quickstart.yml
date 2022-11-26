@@ -30,6 +30,7 @@ jobs:
       - name: sudo apt-get update && sudo apt-get -y install curl
         shell: bash
         run: |
+          cat ~/.bashrc
           source ~/.bashrc
           sudo apt-get update && sudo apt-get -y install curl
       
