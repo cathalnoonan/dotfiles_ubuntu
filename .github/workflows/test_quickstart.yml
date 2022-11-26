@@ -1,0 +1,19 @@
+name: Test Quickstart
+
+on:
+  push:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    name: Test Quickstart - ${{ matrix.os }}
+    steps:
+      - name: Run quickstart commands
+        run: |
+          sudo apt-get update && sudo apt-get -y install curl
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh)"
+          source ~/.dotfiles/_env.sh
