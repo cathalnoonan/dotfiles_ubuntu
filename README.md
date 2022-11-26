@@ -9,6 +9,11 @@ Sets up my Ubuntu/Debian environment for development.
 [![Test Quickstart](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/test_quickstart.yml/badge.svg)](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/test_quickstart.yml)
 
 ## Quick setup:
+0. **Only required if running inside a docker container**
+   ```sh
+   apt-get update && apt-get -y install sudo
+   ```
+
 1. Install curl (might be installed already)
    ```sh
    sudo apt-get update && sudo apt-get -y install curl

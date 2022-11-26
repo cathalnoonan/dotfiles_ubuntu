@@ -24,7 +24,6 @@ jobs:
       options: -u root
 
     env:
-      DOTFILES_COMMIT_SHA: ${{ github.sha }}
       DEBIAN_FRONTEND: noninteractive
 
     steps:
@@ -32,4 +31,7 @@ jobs:
         run: apt update && apt install -y sudo git
 
       - run: sudo apt-get update && sudo apt-get -y install curl
-      - run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
+      - name: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
+        run: |
+          export DOTFILES_COMMIT_SHA=${{ github.sha }}
+          /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"

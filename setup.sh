@@ -12,9 +12,9 @@ sudo apt-get update && sudo apt install -y git
 git clone https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian.git ~/.dotfiles
 
 ##
-# Checkout the expected commit
+# Checkout the current commit (useful in CI scenarios)
 ##
-if [[ -z "${DOTFILES_COMMIT_SHA}" ]]; then
+if [ -n "${DOTFILES_COMMIT_SHA}" ]; then
     WORKING_DIRECTORY=`pwd`
     cd ~/.dotfiles
     git checkout $DOTFILES_COMMIT_SHA
