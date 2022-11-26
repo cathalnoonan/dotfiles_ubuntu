@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 export HOMEBREW_NO_ANALYTICS=1
 

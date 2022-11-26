@@ -5,6 +5,8 @@ Sets up my Ubuntu/Debian environment for development.
 > - Ubuntu 22.04 (WSL)
 > - Debian 11 (WSL)
 
+## GitHub Action checks
+[![Test Quickstart](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/test_quickstart.yml/badge.svg)](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/test_quickstart.yml)
 
 ## Quick setup:
 1. Install curl (might be installed already)

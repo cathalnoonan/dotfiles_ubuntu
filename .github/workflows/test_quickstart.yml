@@ -1,0 +1,35 @@
+name: Test Quickstart
+
+on:
+  push:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    name: Quickstart ${{ matrix.image }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        image:
+          - debian:11
+          # - ubuntu:20.04  # See issue #2
+          - ubuntu:22.04
+
+    container:
+      image: ${{ matrix.image }}
+      options: -u root
+
+    env:
+      DOTFILES_COMMIT_SHA: ${{ github.sha }}
+      DEBIAN_FRONTEND: noninteractive
+
+    steps:
+      - name: Setup github-action prerequisites
+        run: apt update && apt install -y sudo git
+
+      - run: sudo apt-get update && sudo apt-get -y install curl
+      - run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
