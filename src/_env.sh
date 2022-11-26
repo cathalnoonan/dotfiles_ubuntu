@@ -3,7 +3,7 @@
 ##
 # Load other _env.sh files in nested folders
 ##
-for env_file in ~/.dotfiles/*/_env.sh
+for env_file in ~/.dotfiles/src/*/_env.sh
 do
     . $env_file
 done
@@ -30,4 +30,4 @@ function mkcd(){
 ##
 # Load aliases in nested folders
 ##
-. ~/.dotfiles/_alias.sh
+. ~/.dotfiles/src/_alias.sh

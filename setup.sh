@@ -28,8 +28,8 @@ fi
 ##
 echo "" >> $bashrc
 echo "# dotfiles" >> $bashrc
-echo "if [ -f ~/.dotfiles/_env.sh ]; then" >> $bashrc
-echo "  source ~/.dotfiles/_env.sh" >> $bashrc
+echo "if [ -f ~/.dotfiles/src/_env.sh ]; then" >> $bashrc
+echo "  source ~/.dotfiles/src/_env.sh" >> $bashrc
 echo "fi" >> $bashrc
 echo "" >> $bashrc
 
@@ -41,4 +41,4 @@ source $bashrc
 ##
 # Install
 ##
-~/.dotfiles/_install.sh
+~/.dotfiles/src/_install.sh

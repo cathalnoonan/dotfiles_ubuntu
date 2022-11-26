@@ -27,7 +27,7 @@ Sets up my Ubuntu/Debian environment for development.
    > - Docker setup might introduce one or two 20 second delays while running this command.
 3. Run the following command to reload the settings
    ```sh
-   source ~/.dotfiles/_env.sh
+   source ~/.dotfiles/src/_env.sh
    ```
 
 ---
@@ -58,15 +58,15 @@ Sets up my Ubuntu/Debian environment for development.
    bashrc=~/.bashrc
    echo "" >> $bashrc
    echo "# dotfiles" >> $bashrc
-   echo "if [ -f ~/.dotfiles/_env.sh ]; then" >> $bashrc
-   echo "  source ~/.dotfiles/_env.sh" >> $bashrc
+   echo "if [ -f ~/.dotfiles/src/_env.sh ]; then" >> $bashrc
+   echo "  source ~/.dotfiles/src/_env.sh" >> $bashrc
    echo "fi" >> $bashrc
    echo "" >> $bashrc
    ```
 
-3. Load the setup file from `~/.dotfiles`
+3. Load the setup file from `~/.dotfiles/src`
    ```sh
-   source ~/.dotfiles/_env.sh
+   source ~/.dotfiles/src/_env.sh
    ```
 
 4. Run initial setup

@@ -3,17 +3,17 @@
 ##
 # Add alias to re-process environment
 ##
-alias dotfiles_load="source ~/.dotfiles/_env.sh"
+alias dotfiles_load="source ~/.dotfiles/src/_env.sh"
 
 ##
-# Alias a install command
+# Alias install command
 ##
-alias dotfiles_install="~/.dotfiles/_install.sh"
+alias dotfiles_install="~/.dotfiles/src/_install.sh"
 
 ##
 # Assign all aliases from all "_alias.sh" files in nested folders
 ##
-for alias_file in ~/.dotfiles/*/_alias.sh
+for alias_file in ~/.dotfiles/src/*/_alias.sh
 do
     . $alias_file
 done
