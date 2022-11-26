@@ -7,7 +7,7 @@ sudo apt install -y \
     wget
 
 # Run all "_install.sh" files in nested folders
-for install_file in ~/.dotfiles/*/_install.sh
+for install_file in ~/.dotfiles/src/*/_install.sh
 do
     $install_file
 done
