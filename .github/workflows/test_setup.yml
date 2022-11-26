@@ -1,4 +1,4 @@
-name: Test Quickstart
+name: Test Setup
 
 on:
   push:
@@ -9,7 +9,7 @@ defaults:
 
 jobs:
   test:
-    name: Quickstart ${{ matrix.image }}
+    name: Setup on ${{ matrix.image }}
     runs-on: ubuntu-latest
 
     strategy:
@@ -25,13 +25,11 @@ jobs:
 
     env:
       DEBIAN_FRONTEND: noninteractive
+      DOTFILES_COMMIT_SHA: ${{ github.sha }}
 
     steps:
-      - name: Setup github-action prerequisites
+      - name: Install prerequisites for running inside docker container
         run: apt update && apt install -y sudo git
 
       - run: sudo apt-get update && sudo apt-get -y install curl
-      - name: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
-        run: |
-          export DOTFILES_COMMIT_SHA=${{ github.sha }}
-          /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
+      - run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"

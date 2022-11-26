@@ -6,11 +6,14 @@ Sets up my Ubuntu/Debian environment for development.
 > - Debian 11 (WSL)
 
 ## GitHub Action checks
-[![Test Quickstart](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/test_quickstart.yml/badge.svg)](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/test_quickstart.yml)
+[![Test Setup](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/test_setup.yml/badge.svg)](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/test_setup.yml)
 
-## Quick setup:
-0. **Only required if running inside a docker container**
+---
+
+## Setup:
+0. If running inside a docker container
    ```sh
+   # If the commands are not being run inside a docker conatiner, skip this step
    apt-get update && apt-get -y install sudo
    ```
 
@@ -37,7 +40,7 @@ Sets up my Ubuntu/Debian environment for development.
 
 ---
 
-## Manual install:
+## Manual Setup:
 ### Note:
 - During the following steps, you will be asked to enter your sudo password.
 - You will be asked to press enter to continue.
