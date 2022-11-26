@@ -1,7 +1,9 @@
-# dotfiles (Ubuntu)
-Sets up my Ubuntu dev environment.
-> **Note**:
-> - Tested on 20.04 (WSL) and 22.04 (WSL).
+# dotfiles (Ubuntu/Debian)
+Sets up my Ubuntu/Debian environment for development.
+> **Tested on**:
+> - Ubuntu 20.04 (WSL)
+> - Ubuntu 22.04 (WSL)
+> - Debian 11 (WSL)
 
 
 ## Note:
@@ -25,12 +27,15 @@ Please read the command line if it appears to have stopped; it may be waiting fo
    git clone https://github.com/cathalnoonan/dotfiles_ubuntu.git ~/.dotfiles
    ```
 
-2. Add the following to `~/.bashrc` \
+2. Run the following commands to add the dotfiles repo to `~/.bashrc` \
    **This allows the environment setup to persist between logouts/reboots**
    ```sh
-   if [ -f ~/.dotfiles/_env.sh ]; then
-     source ~/.dotfiles/_env.sh
-   fi
+   echo "" >> ~/.bashrc
+   echo "# dotfiles" >> ~/.bashrc
+   echo "if [ -f ~/.dotfiles/_env.sh ]; then" >> ~/.bashrc
+   echo "  source ~/.dotfiles/_env.sh" >> ~/.bashrc
+   echo "fi" >> ~/.bashrc
+   echo "" >> ~/.bashrc
    ```
 
 3. Load the setup file from `~/.dotfiles`
@@ -38,16 +43,17 @@ Please read the command line if it appears to have stopped; it may be waiting fo
    source ~/.dotfiles/_env.sh
    ```
    > **Note**:
-   > - There will be errors in the conosle after running this command.
+   > - There will be an error in the conosle after running this command.
 
 4. Run initial setup
    ```sh
    dotfiles_install
    ```
    > **Note**:
+   > - Setup will take a few minutes.
    > - The sudo password may be requested during this process.
+   > - You will need to enter `Y` and press `ENTER` during the process.
    > - Docker setup will introduce one or two 20 second delays while running this command.
-   > - Homebrew will also prompt to press ENTER.
 
 5. Reload config
    ```sh
