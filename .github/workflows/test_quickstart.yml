@@ -32,6 +32,11 @@ jobs:
           echo "alias sudo=''" >> ~/.bashrc
           echo "alias sudo=''" >> /etc/profile
 
+          echo "---------~/.bashrc---------"
+          cat ~/.bashrc
+          echo "---------/etc/profile---------"
+          cat /etc/profile
+
       - name: sudo apt-get update && sudo apt-get -y install curl
         run: |
           alias sudo=''
