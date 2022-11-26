@@ -5,14 +5,19 @@ on:
 
 jobs:
   test:
+    name: Quickstart ${{ matrix.image }}
+    runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        os:
-          - ubuntu-latest
-    runs-on: ${{ matrix.os }}
-    name: Test Quickstart - ${{ matrix.os }}
+        image:
+          - debian:11
+          - ubuntu:20.04
+          - ubuntu:22.04
+    container: ${{ matrix.image }}
+
     steps:
-      - name: Run quickstart commands
+      - name: Run Quickstart commands
         run: |
           sudo apt-get update && sudo apt-get -y install curl
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh)"
