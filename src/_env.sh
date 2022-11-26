@@ -9,17 +9,6 @@ do
 done
 
 ##
-# Customise Prompt(s)
-# - Removes hostname and username
-# - %L is the shell level
-# - Starts a new line for each command
-PROMPT='
-[%L] %1~ %# '
-# - Adds the time to the right when entering a command
-RPROMPT='%*'
-##
-
-##
 # Handy functions
 ##
 function mkcd(){
