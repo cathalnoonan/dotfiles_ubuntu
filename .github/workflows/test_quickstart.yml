@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Setup github-action prerequisites
-        run: apt update && apt-install -y sudo git
+        run: apt update && apt install -y sudo git
 
       - run: sudo apt-get update && sudo apt-get -y install curl
       - run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
