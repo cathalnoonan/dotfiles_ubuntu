@@ -23,15 +23,13 @@ jobs:
       DOTFILES_COMMIT_SHA: ${{ github.sha }}
 
     steps:
+      - name: Remove sudo command
+        shell: bash
+        run: echo "alias sudo=''" >> ~/.bashrc
+
       - name: Run Quickstart commands
         shell: bash
         run: |
-          # Remove sudo
-          echo "#!/usr/bin/env bash" >> ~/.bashrc
-          echo "alias sudo=''" >> ~/.bashrc
-          chmod +x ~/.bashrc
-          source ~/.bashrc
-
           sudo apt-get update && sudo apt-get -y install curl
           /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
           source ~/.dotfiles/_env.sh
