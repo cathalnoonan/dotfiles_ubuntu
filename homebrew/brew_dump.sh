@@ -2,7 +2,7 @@
 
 WORKING_DIR=$(pwd)
 
-cd $DOTFILES_ROOT/homebrew
+cd ~/.dotfiles/homebrew
 rm -rf ./Brewfile
 brew bundle dump --describe
 cd $WORKING_DIR

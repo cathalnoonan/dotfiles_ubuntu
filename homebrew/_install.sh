@@ -6,11 +6,11 @@ export HOMEBREW_NO_ANALYTICS=1
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Add path variables
-source $DOTFILES_ROOT/homebrew/_env.sh
+source ~/.dotfiles/homebrew/_env.sh
 
 # Install recommended dependencies
-sudo apt-get install build-essential
+sudo apt-get install -y build-essential
 brew install gcc
 
 # Install my dependencies
-$DOTFILES_ROOT/homebrew/brew_restore.sh
+~/.dotfiles/homebrew/brew_restore.sh

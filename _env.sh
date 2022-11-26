@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
-export DOTFILES_ROOT=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
 ##
 # Load other _env.sh files in nested folders
 ##
-for env_file in $DOTFILES_ROOT/*/_env.sh
+for env_file in ~/.dotfiles/*/_env.sh
 do
     . $env_file
 done
@@ -32,4 +30,4 @@ function mkcd(){
 ##
 # Load aliases in nested folders
 ##
-. $DOTFILES_ROOT/_alias.sh
+. ~/.dotfiles/_alias.sh

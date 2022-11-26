@@ -2,6 +2,6 @@
 
 WORKING_DIR=$(pwd)
 
-cd $DOTFILES_ROOT/homebrew
+cd ~/.dotfiles/homebrew
 brew bundle install
 cd $WORKING_DIR
