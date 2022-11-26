@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
 bashrc=~/.bashrc
-source $bashrc
 
 ##
 # Install prerequisites
