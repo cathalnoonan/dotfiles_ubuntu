@@ -13,7 +13,25 @@ You will be asked to press enter to continue.
 
 Please read the command line if it appears to have stopped; it may be waiting for input or an intentional delay.
 
-## Prerequisites:
+## Quick setup:
+1. Run the following command in bash
+   ```sh
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/cathalnoonan/dotfiles_ubuntu-and-debian/HEAD/setup.sh)"
+   ```
+   > **Note**:
+   > - Setup will take a few minutes.
+   > - The sudo password will be requested during this process.
+   > - You will need to type `Y` and/or press `ENTER` during the process.
+   > - Docker setup might introduce one or two 20 second delays while running this command.
+2. Run the following command to reload the settings
+   ```sh
+   source ~/.dotfiles/_env.sh
+   ```
+
+---
+
+## Manual install:
+### Prerequisites:
 1. Install git
    ```sh
    sudo apt-get update && sudo apt install -y git
@@ -21,10 +39,10 @@ Please read the command line if it appears to have stopped; it may be waiting fo
    > **Note**:
    > - The sudo password will be requested at this point.
 
-## How to use:
+### Installation:
 1. Clone this repository to your user profile in the `~/.dotfiles` folder
    ```sh
-   git clone https://github.com/cathalnoonan/dotfiles_ubuntu.git ~/.dotfiles
+   git clone https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian.git ~/.dotfiles
    ```
 
 2. Run the following commands to add the dotfiles repo to `~/.bashrc` \
@@ -51,8 +69,8 @@ Please read the command line if it appears to have stopped; it may be waiting fo
    > **Note**:
    > - Setup will take a few minutes.
    > - The sudo password may be requested during this process.
-   > - You will need to enter `Y` / `ENTER` during the process.
-   > - Docker setup will introduce one or two 20 second delays while running this command.
+   > - You will need to type `Y` and/or press `ENTER` during the process.
+   > - Docker setup might introduce one or two 20 second delays while running this command.
 
 5. Reload config
    ```sh
