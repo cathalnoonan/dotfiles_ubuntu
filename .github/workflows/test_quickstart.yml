@@ -27,7 +27,14 @@ jobs:
         shell: bash
         run: echo "alias sudo=''" >> ~/.bashrc
 
-      - run: sudo apt-get update && sudo apt-get -y install curl
-        shell: bash -ileo pipefail {0}
-      - run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
-        shell: bash -ileo pipefail {0}
+      - name: sudo apt-get update && sudo apt-get -y install curl
+        shell: bash
+        run: |
+          source ~/.bashrc
+          sudo apt-get update && sudo apt-get -y install curl
+      
+      - name: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
+        shell: bash
+        run: |
+          source ~/.bashrc
+          /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
