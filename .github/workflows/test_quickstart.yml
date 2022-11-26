@@ -16,7 +16,7 @@ jobs:
       matrix:
         image:
           - debian:11
-          - ubuntu:20.04
+          # - ubuntu:20.04  # See issue #2
           - ubuntu:22.04
 
     container:
