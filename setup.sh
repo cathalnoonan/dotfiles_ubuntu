@@ -24,14 +24,14 @@ echo "" >> $bashrc
 ##
 # Reload configuration
 ##
-source ~/.dotfiles/_env.sh
+source $bashrc
 
 ##
 # Install
 ##
-dotfiles_install
+~/.dotfiles/_install.sh
 
 ##
 # Reload configuration
 ##
-dotfiles_load
+source $bashrc
