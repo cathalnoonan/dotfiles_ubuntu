@@ -14,7 +14,10 @@ jobs:
           - debian:11
           - ubuntu:20.04
           - ubuntu:22.04
-    container: ${{ matrix.image }}
+
+    container:
+      image: ${{ matrix.image }}
+      options: -u root
 
     steps:
       - name: Run Quickstart commands
