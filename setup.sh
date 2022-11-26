@@ -39,4 +39,5 @@ source $bashrc
 ##
 # Install
 ##
+export CI=1
 ~/.dotfiles/src/_install.sh

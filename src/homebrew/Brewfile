@@ -1,6 +1,4 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
-# GNU compiler collection
-brew "gcc"
 # Modern replacement for 'ls'
 brew "exa"
