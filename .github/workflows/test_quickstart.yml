@@ -28,6 +28,6 @@ jobs:
         run: echo "alias sudo=''" >> ~/.bashrc
 
       - run: sudo apt-get update && sudo apt-get -y install curl
-        shell: bash -leo pipefail {0}
+        shell: bash -ileo pipefail {0}
       - run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
-        shell: bash -leo pipefail {0}
+        shell: bash -ileo pipefail {0}
