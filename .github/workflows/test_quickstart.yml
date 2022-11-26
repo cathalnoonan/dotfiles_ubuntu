@@ -3,6 +3,10 @@ name: Test Quickstart
 on:
   push:
 
+defaults:
+  run:
+    shell: bash -leo pipefail {0}
+
 jobs:
   test:
     name: Quickstart ${{ matrix.image }}
@@ -24,11 +28,18 @@ jobs:
 
     steps:
       - name: Remove sudo
-        run: echo "alias sudo=''" >> /etc/profile
-        shell: bash
+        run: |
+          echo "alias sudo=''" >> ~/.bashrc
+          echo "alias sudo=''" >> /etc/profile
 
-      - run: sudo apt-get update && sudo apt-get -y install curl
-        shell: bash -l {0}
+      - name: sudo apt-get update && sudo apt-get -y install curl
+        run: |
+          alias sudo=''
+          source ~/.bashrc
+          sudo apt-get update && sudo apt-get -y install curl
       
-      - run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
-        shell: bash -l {0}
+      - name: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
+        run: |
+          alias sudo=''
+          source ~/.bashrc
+          /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
