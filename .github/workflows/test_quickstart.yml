@@ -22,6 +22,10 @@ jobs:
     steps:
       - name: Run Quickstart commands
         run: |
+          # Remove sudo
+          echo "alias sudo=''" >> ~/.bashrc
+          source ~/.bashrc
+
           sudo apt-get update && sudo apt-get -y install curl
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh)"
           source ~/.dotfiles/_env.sh
