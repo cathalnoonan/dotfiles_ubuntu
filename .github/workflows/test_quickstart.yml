@@ -23,19 +23,14 @@ jobs:
       DOTFILES_COMMIT_SHA: ${{ github.sha }}
 
     steps:
-      - name: Remove sudo command
-        shell: bash
-        run: echo "alias sudo=''" >> ~/.bashrc
-
       - name: sudo apt-get update && sudo apt-get -y install curl
         shell: bash
         run: |
-          cat ~/.bashrc
-          source ~/.bashrc
+          alias sudo=''
           sudo apt-get update && sudo apt-get -y install curl
       
       - name: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
         shell: bash
         run: |
-          source ~/.bashrc
+          alias sudo=''
           /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
