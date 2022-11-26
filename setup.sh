@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+bashrc=~/.bashrc
+source $bashrc
+
 ##
 # Install prerequisites
 ##
@@ -13,7 +16,6 @@ git clone https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian.git ~/.dotf
 ##
 # Add to bashrc
 ##
-bashrc=~/.bashrc
 echo "" >> $bashrc
 echo "# dotfiles" >> $bashrc
 echo "if [ -f ~/.dotfiles/_env.sh ]; then" >> $bashrc
@@ -30,8 +32,3 @@ source $bashrc
 # Install
 ##
 ~/.dotfiles/_install.sh
-
-##
-# Reload configuration
-##
-source $bashrc
