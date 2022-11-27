@@ -15,6 +15,7 @@ jobs:
     strategy:
       matrix:
         image:
+          - debian:10
           - debian:11
           # - ubuntu:20.04  # See issue #2
           - ubuntu:22.04
@@ -31,5 +32,8 @@ jobs:
       - name: Install prerequisites for running inside docker container
         run: apt update && apt install -y sudo git
 
-      - run: sudo apt-get update && sudo apt-get -y install curl
-      - run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
+      - name: Install general prerequisites
+        run: sudo apt-get update && sudo apt-get -y install curl
+
+      - name: Run setup script
+        run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"

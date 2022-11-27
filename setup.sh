@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-bashrc=~/.bashrc
 
 ##
 # Install prerequisites
@@ -24,16 +23,13 @@ fi
 ##
 # Add to bashrc
 ##
+bashrc=~/.bashrc
 echo "" >> $bashrc
 echo "# dotfiles" >> $bashrc
 echo "if [ -f ~/.dotfiles/src/_env.sh ]; then" >> $bashrc
 echo "  source ~/.dotfiles/src/_env.sh" >> $bashrc
 echo "fi" >> $bashrc
 echo "" >> $bashrc
-
-##
-# Reload configuration
-##
 source $bashrc
 
 ##
@@ -41,3 +37,14 @@ source $bashrc
 ##
 export CI=1
 ~/.dotfiles/src/_install.sh
+
+##
+# Print reminder to source
+##
+echo ""
+echo "------------------------------------------------------"
+echo "Setup complete."
+echo "Run the following commmand to reload the environment."
+echo "    source ~/.dotfiles/src/_env.sh"
+echo "------------------------------------------------------"
+echo ""

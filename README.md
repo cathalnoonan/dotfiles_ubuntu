@@ -11,20 +11,20 @@ Sets up my Ubuntu/Debian environment for development.
 ---
 
 ## Setup:
-0. If running inside a docker container
-   ```sh
-   # If the commands are not being run inside a docker conatiner, skip this step
-   apt-get update && apt-get -y install sudo
-   ```
+### Prerequisites for running inside a docker container
+- Install sudo
+  ```sh
+  apt-get update && apt-get -y install sudo
+  ```
 
-1. Install curl (might be installed already)
-   ```sh
-   sudo apt-get update && sudo apt-get -y install curl
-   ```
-   > **Note**:
-   > - The sudo password might be requested during this process.
+### General prerequisites
+- Install curl (might be installed already)
+  ```sh
+  sudo apt-get update && sudo apt-get -y install curl
+  ```
 
-2. Run the following command in bash
+### Installation
+1. Run the following command in bash
    ```sh
    /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/cathalnoonan/dotfiles_ubuntu-and-debian/HEAD/setup.sh )"
    ```
@@ -70,14 +70,10 @@ Sets up my Ubuntu/Debian environment for development.
    echo "  source ~/.dotfiles/src/_env.sh" >> $bashrc
    echo "fi" >> $bashrc
    echo "" >> $bashrc
+   source ~/.bashrc
    ```
 
-3. Load the setup file from `~/.dotfiles/src`
-   ```sh
-   source ~/.dotfiles/src/_env.sh
-   ```
-
-4. Run initial setup
+3. Run initial setup
    ```sh
    dotfiles_install
    ```
@@ -87,7 +83,7 @@ Sets up my Ubuntu/Debian environment for development.
    > - You will need to type `Y` and/or press `ENTER` during the process.
    > - Docker setup might introduce one or two 20 second delays while running this command.
 
-5. Reload config
+4. Reload config
    ```sh
    dotfiles_load
    ```
