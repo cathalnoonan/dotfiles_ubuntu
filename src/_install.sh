@@ -6,8 +6,6 @@ sudo apt install -y \
     curl \
     wget
 
-#!/bin/bash
-
 # Check if shell is interactive; if it is interactive give the user prompts of what to install
 if [ "$DEBIAN_FRONTEND" != "noninteractive" ]; then
     echo "Please enter 'y' for the items to install, or 'n' for the items to skip."
