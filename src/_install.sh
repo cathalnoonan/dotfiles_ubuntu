@@ -45,7 +45,7 @@ if [ "$DEBIAN_FRONTEND" != "noninteractive" ]; then
     for install_folder in "${install_list[@]}"
     do
         # Install $install_folder
-        echo ~/.dotfiles/src/$install_folder/_install.sh
+        ~/.dotfiles/src/$install_folder/_install.sh
     done
 
 else
@@ -53,7 +53,7 @@ else
     # Run all "_install.sh" files in nested folders
     for install_file in ~/.dotfiles/src/*/_install.sh
     do
-        echo $install_file
+        $install_file
     done
 
 fi
