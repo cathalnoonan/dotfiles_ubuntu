@@ -1,9 +1,10 @@
 # dotfiles (Ubuntu/Debian)
 Sets up my Ubuntu/Debian environment for development.
 > **Tested on**:
+> - Debian 10 (WSL and Docker)
+> - Debian 11 (WSL and Docker)
 > - Ubuntu 20.04 (WSL)
-> - Ubuntu 22.04 (WSL)
-> - Debian 11 (WSL)
+> - Ubuntu 22.04 (WSL and Docker)
 
 ## GitHub Action checks
 [![Test Setup](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/test_setup.yml/badge.svg)](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/test_setup.yml)
@@ -33,7 +34,7 @@ Sets up my Ubuntu/Debian environment for development.
    > - The sudo password might be requested during this process.
    > - You will need to type `Y` and/or press `ENTER` during the process.
    > - Docker setup might introduce one or two 20 second delays while running this command.
-3. Run the following command to reload the settings
+2. Run the following command to reload the settings
    ```sh
    source ~/.dotfiles/src/_env.sh
    ```
@@ -47,12 +48,12 @@ Sets up my Ubuntu/Debian environment for development.
 - Please read the command line if it appears to have stopped; it may be waiting for input or an intentional delay.
 
 ### Prerequisites:
-1. Install git
-   ```sh
-   sudo apt-get update && sudo apt install -y git
-   ```
-   > **Note**:
-   > - The sudo password will be requested at this point.
+- Install git
+  ```sh
+  sudo apt-get update && sudo apt install -y git
+  ```
+  > **Note**:
+  > - The sudo password will be requested at this point.
 
 ### Installation:
 1. Clone this repository to your user profile in the `~/.dotfiles` folder

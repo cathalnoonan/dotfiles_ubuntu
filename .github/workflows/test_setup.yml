@@ -5,7 +5,7 @@ on:
 
 defaults:
   run:
-    shell: bash
+    shell: bash -l -eo pipefail {0}
 
 jobs:
   test:
@@ -35,5 +35,12 @@ jobs:
       - name: Install general prerequisites
         run: sudo apt-get update && sudo apt-get -y install curl
 
+      # Pass Commit SHA here in case there are changes to setup.sh on the branch where action is running
       - name: Run setup script
         run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
+
+      # Print out installed versions
+      - run: docker --version
+      - run: dotnet --info
+      - run: brew --version
+      - run: nvm --version
