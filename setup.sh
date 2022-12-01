@@ -3,7 +3,8 @@
 ##
 # Install prerequisites
 ##
-sudo apt-get update && sudo apt install -y git
+sudo apt-get update && sudo apt install -y \
+    git
 
 ##
 # Clone repo
@@ -21,15 +22,17 @@ if [ -n "${DOTFILES_COMMIT_SHA}" ]; then
 fi
 
 ##
-# Add to bashrc
+# Add to bashrc (if not already added)
 ##
 bashrc=~/.bashrc
-echo "" >> $bashrc
-echo "# dotfiles" >> $bashrc
-echo "if [ -f ~/.dotfiles/src/_env.sh ]; then" >> $bashrc
-echo "  source ~/.dotfiles/src/_env.sh" >> $bashrc
-echo "fi" >> $bashrc
-echo "" >> $bashrc
+cat $bashrc | grep -q "# dotfiles" || (
+    echo "" >> $bashrc
+    echo "# dotfiles" >> $bashrc
+    echo "if [ -f ~/.dotfiles/src/_env.sh ]; then" >> $bashrc
+    echo "  source ~/.dotfiles/src/_env.sh" >> $bashrc
+    echo "fi" >> $bashrc
+    echo "" >> $bashrc
+)
 source $bashrc
 
 ##
