@@ -9,7 +9,7 @@ sudo apt install -y \
 #!/bin/bash
 
 # Check if shell is interactive; if it is interactive give the user prompts of what to install
-if [[ $- == *i* ]]; then
+if [ -z "$PS1" ]; then
     echo "Please enter 'y' for the items to install, or 'n' for the items to skip."
 
     # Find all folders in "~/.dotfiles/src/" containing "_install.sh"
