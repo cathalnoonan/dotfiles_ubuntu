@@ -8,15 +8,8 @@ sudo apt install -y \
 
 #!/bin/bash
 
+# Check if shell is interactive; if it is interactive give the user prompts of what to install
 if [[ $- == *i* ]]; then
-    # Can't prompt user what to install; install everything
-    # Run all "_install.sh" files in nested folders
-    for install_file in ~/.dotfiles/src/*/_install.sh
-    do
-        $install_file
-    done
-
-else
     echo "Please enter 'y' for the items to install, or 'n' for the items to skip."
 
     # Find all folders in "~/.dotfiles/src/" containing "_install.sh"
@@ -54,4 +47,13 @@ else
         # Install $install_folder
         ~/.dotfiles/src/$install_folder/_install.sh
     done
+
+else
+    # Can't prompt user what to install; install everything
+    # Run all "_install.sh" files in nested folders
+    for install_file in ~/.dotfiles/src/*/_install.sh
+    do
+        $install_file
+    done
+    
 fi
