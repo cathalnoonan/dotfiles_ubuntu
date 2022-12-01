@@ -9,7 +9,7 @@ sudo apt install -y \
 #!/bin/bash
 
 # Check if shell is interactive; if it is interactive give the user prompts of what to install
-if [ -z "$PS1" ]; then
+if [ "$DEBIAN_FRONTEND" != "noninteractive" ]; then
     echo "Please enter 'y' for the items to install, or 'n' for the items to skip."
 
     # Find all folders in "~/.dotfiles/src/" containing "_install.sh"
@@ -45,7 +45,7 @@ if [ -z "$PS1" ]; then
     for install_folder in "${install_list[@]}"
     do
         # Install $install_folder
-        ~/.dotfiles/src/$install_folder/_install.sh
+        echo ~/.dotfiles/src/$install_folder/_install.sh
     done
 
 else
@@ -53,7 +53,7 @@ else
     # Run all "_install.sh" files in nested folders
     for install_file in ~/.dotfiles/src/*/_install.sh
     do
-        $install_file
+        echo $install_file
     done
-    
+
 fi
