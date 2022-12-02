@@ -8,7 +8,11 @@ sudo apt install -y \
 
 # Check if shell is interactive; if it is interactive give the user prompts of what to install
 if [ "$DEBIAN_FRONTEND" != "noninteractive" ]; then
+    echo
+    echo "------------------------------------------------------------------------"
+    echo "Dotfiles install"
     echo "Please enter 'y' for the items to install, or 'n' for the items to skip."
+    echo "------------------------------------------------------------------------"
 
     # Find all folders in "~/.dotfiles/src/" containing "_install.sh"
     folder_names=()
@@ -30,11 +34,11 @@ if [ "$DEBIAN_FRONTEND" != "noninteractive" ]; then
     for folder_name in "${folder_names[@]}"
     do
         while true; do
-            read -p "    Do you wish to install $folder_name? (y/n) " yn
+            read -p "  Do you wish to install $folder_name? (y/n) " yn
             case $yn in
                 [Yy]* ) install_list=(${install_list[@]} $folder_name); break;;
                 [Nn]* ) break;;
-                * ) echo "Please answer yes or no.";;
+                * ) echo "   Please answer yes or no.";;
             esac
         done
     done
