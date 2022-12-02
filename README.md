@@ -38,3 +38,23 @@ Sets up my Ubuntu/Debian environment for development.
    ```sh
    source ~/.dotfiles/src/_env.sh
    ```
+
+---
+
+## Updates
+To retrieve updates, run the following commands in bash:
+1. Pull the latest changes
+   ```sh
+   dotfiles_update
+   ```
+2. Re/install any packages
+   ```sh
+   dotfiles_install
+   ```
+3. Reload the environment variables
+   ```sh
+   dotfiles_load
+   ```
+
+> **Note**: \
+> The commands in this sections are aliases, that are set in the [src/_alias.sh](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/blob/main/src/_alias.sh) file.

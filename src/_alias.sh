@@ -13,6 +13,7 @@ done
 ##
 alias dotfiles_load="source ~/.dotfiles/src/_env.sh"
 alias dotfiles_install="~/.dotfiles/src/_install.sh"
+alias dotfiles_update="~/.dotfiles/src/_update.sh"
 
 
 ##
