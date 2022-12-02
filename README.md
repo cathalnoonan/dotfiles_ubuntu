@@ -42,6 +42,10 @@ Sets up my Ubuntu/Debian environment for development.
 ---
 
 ## Updates
+
+> **Note**: \
+> The commands in this section are aliases, that are set in [src/_alias.sh (link)](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/blob/main/src/_alias.sh).
+
 To retrieve updates, run the following commands in bash:
 1. Pull the latest changes
    ```sh
@@ -55,6 +59,3 @@ To retrieve updates, run the following commands in bash:
    ```sh
    dotfiles_load
    ```
-
-> **Note**: \
-> The commands in this sections are aliases, that are set in the [src/_alias.sh](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/blob/main/src/_alias.sh) file.
