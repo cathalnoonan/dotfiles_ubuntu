@@ -6,6 +6,12 @@
 # - https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian#debian-11-
 ##
 
+# Avoid dotnet installing from a default ppa
+if [[ -f /etc/apt/preferences.d/microsoft-dotnet.pref ]]; then
+  sudo rm /etc/apt/preferences.d/microsoft-dotnet.pref
+fi
+sudo ln -s ~/.dotfiles/src/dotnet/microsoft-dotnet.pref /etc/apt/preferences.d/
+
 # Load the current Distro version
 source /etc/os-release
 DIST_NAME=$ID
@@ -18,5 +24,4 @@ rm packages-microsoft-prod.deb
 
 # Install the SDK
 sudo apt-get update && \
-  sudo apt-get install -y dotnet-sdk-6.0 && \
-  sudo apt-get install -y dotnet-sdk-7.0
+  sudo apt-get install -y dotnet-sdk-6.0
