@@ -18,5 +18,4 @@ rm packages-microsoft-prod.deb
 
 # Install the SDK
 sudo apt-get update && \
-  sudo apt-get install -y dotnet-sdk-6.0 && \
-  sudo apt-get install -y dotnet-sdk-7.0
+  sudo apt-get install -y dotnet-sdk-6.0
