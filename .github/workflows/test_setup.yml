@@ -39,10 +39,10 @@ jobs:
       - name: Run setup script
         run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
 
-      # Print out installed versions
-      - run: |-
-          source ~/.bashrc;
-          docker --version;
-          dotnet --info;
-          brew --version;
-          nvm --version;
+      - name: Print out version numbers
+        run: |-
+          source ~/.bashrc
+          exa --version
+          docker --version
+          dotnet --version
+          nvm --version
