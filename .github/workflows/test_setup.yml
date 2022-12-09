@@ -39,7 +39,6 @@ jobs:
       - name: Run setup script
         run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
 
-      # Print out installed versions
       - name: Print out version numbers
         run: |-
           source ~/.bashrc
