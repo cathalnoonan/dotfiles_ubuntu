@@ -6,7 +6,7 @@
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 
 # Reload configurations
-source ~/.dotfiles/src/nvm/_env.sh
+source ~/.dotfiles/src/nvm/env.sh
 
 # Install current lts version
 nvm install --lts

@@ -1,8 +1,8 @@
 
 ##
-# Load other _env.sh files in nested folders
+# Load other "env.sh" files in nested folders
 ##
-for env_file in ~/.dotfiles/src/*/_env.sh
+for env_file in ~/.dotfiles/src/*/env.sh
 do
     . $env_file
 done
@@ -18,7 +18,7 @@ function mkcd(){
 ##
 # Load aliases in nested folders
 ##
-. ~/.dotfiles/src/_alias.sh
+. ~/.dotfiles/src/alias.sh
 
 ##
 # Helper variables

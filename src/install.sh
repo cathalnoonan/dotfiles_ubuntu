@@ -14,13 +14,13 @@ if [ "$DEBIAN_FRONTEND" != "noninteractive" ]; then
     echo "Please enter 'y' for the items to install, or 'n' for the items to skip."
     echo "------------------------------------------------------------------------"
 
-    # Find all folders in "~/.dotfiles/src/" containing "_install.sh"
+    # Find all folders in "~/.dotfiles/src/" containing "install.sh"
     folder_names=()
-    for install_file in ~/.dotfiles/src/*/_install.sh
+    for install_file in ~/.dotfiles/src/*/install.sh
     do
         # Strip contianing folder (prefix), strip filename (suffix)
         prefix_name="$HOME/.dotfiles/src/"
-        suffix_name="/_install.sh"
+        suffix_name="/install.sh"
         folder_name=$install_file
         folder_name=${folder_name#$prefix_name}
         folder_name=${folder_name%$suffix_name}
@@ -43,17 +43,17 @@ if [ "$DEBIAN_FRONTEND" != "noninteractive" ]; then
         done
     done
 
-    # Run each _install.sh where the user answered yes
+    # Run each install.sh where the user answered yes
     for install_folder in "${install_list[@]}"
     do
         # Install $install_folder
-        ~/.dotfiles/src/$install_folder/_install.sh
+        ~/.dotfiles/src/$install_folder/install.sh
     done
 
 else
     # Can't prompt user what to install; install everything
-    # Run all "_install.sh" files in nested folders
-    for install_file in ~/.dotfiles/src/*/_install.sh
+    # Run all "install.sh" files in nested folders
+    for install_file in ~/.dotfiles/src/*/install.sh
     do
         $install_file
     done
