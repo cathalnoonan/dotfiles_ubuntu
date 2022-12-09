@@ -15,16 +15,6 @@ alias dotfiles_load="source ~/.dotfiles/src/_env.sh"
 alias dotfiles_install="~/.dotfiles/src/_install.sh"
 alias dotfiles_update="~/.dotfiles/src/_update.sh"
 
-
-##
-# Alias "ls" to exa
-##
-if [ -x "$(command -v exa)" ]
-    then
-        alias ls='exa -laFh --git'
-        alias exa='exa -laFh --git'
-fi
-
 ##
 # Windows-style aliases
 ##
