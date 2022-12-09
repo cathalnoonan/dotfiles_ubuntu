@@ -36,7 +36,7 @@ Sets up my Ubuntu/Debian environment for development.
    > - Docker setup might introduce one or two 20 second delays while running this command.
 2. Run the following command to reload the settings
    ```sh
-   source ~/.dotfiles/src/_env.sh
+   source ~/.dotfiles/src/env.sh
    ```
 
 ---
@@ -44,7 +44,7 @@ Sets up my Ubuntu/Debian environment for development.
 ## Updates
 
 > **Note**: \
-> The commands in this section are aliases, that are set in [src/_alias.sh (link)](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/blob/main/src/_alias.sh).
+> The commands in this section are aliases, that are set in [src/alias.sh (link)](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/blob/main/src/alias.sh).
 
 To retrieve updates, run the following commands in bash:
 1. Pull the latest changes

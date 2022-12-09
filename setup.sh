@@ -28,8 +28,8 @@ bashrc=~/.bashrc
 cat $bashrc | grep -q "# dotfiles" || (
     echo "" >> $bashrc
     echo "# dotfiles" >> $bashrc
-    echo "if [ -f ~/.dotfiles/src/_env.sh ]; then" >> $bashrc
-    echo "  source ~/.dotfiles/src/_env.sh" >> $bashrc
+    echo "if [ -f ~/.dotfiles/src/env.sh ]; then" >> $bashrc
+    echo "  source ~/.dotfiles/src/env.sh" >> $bashrc
     echo "fi" >> $bashrc
     echo "" >> $bashrc
 )
@@ -39,7 +39,7 @@ source $bashrc
 # Install
 ##
 export CI=1
-~/.dotfiles/src/_install.sh
+~/.dotfiles/src/install.sh
 
 ##
 # Print reminder to source
@@ -48,6 +48,6 @@ echo ""
 echo "------------------------------------------------------"
 echo "Setup complete."
 echo "Run the following commmand to reload the environment."
-echo "    source ~/.dotfiles/src/_env.sh"
+echo "    source ~/.dotfiles/src/env.sh"
 echo "------------------------------------------------------"
 echo ""
