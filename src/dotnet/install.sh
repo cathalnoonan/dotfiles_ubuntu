@@ -8,7 +8,7 @@
 
 # Avoid dotnet installing from a default ppa
 if [[ -f /etc/apt/preferences.d/microsoft-dotnet.pref ]]; then
-  sudo rm /etc/apt/preferences.d/microsoft-dotnet.pref
+    sudo rm /etc/apt/preferences.d/microsoft-dotnet.pref
 fi
 sudo ln -s ~/.dotfiles/src/dotnet/microsoft-dotnet.pref /etc/apt/preferences.d/
 
@@ -24,4 +24,4 @@ rm packages-microsoft-prod.deb
 
 # Install the SDK
 sudo apt-get update && \
-  sudo apt-get install -y dotnet-sdk-6.0
+    sudo apt-get install -y dotnet-sdk-6.0

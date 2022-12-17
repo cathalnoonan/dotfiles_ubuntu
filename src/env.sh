@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 ##
 # Load other "env.sh" files in nested folders

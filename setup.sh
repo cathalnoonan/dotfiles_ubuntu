@@ -29,7 +29,7 @@ cat $bashrc | grep -q "# dotfiles" || (
     echo "" >> $bashrc
     echo "# dotfiles" >> $bashrc
     echo "if [ -f ~/.dotfiles/src/env.sh ]; then" >> $bashrc
-    echo "  source ~/.dotfiles/src/env.sh" >> $bashrc
+    echo "    source ~/.dotfiles/src/env.sh" >> $bashrc
     echo "fi" >> $bashrc
     echo "" >> $bashrc
 )
