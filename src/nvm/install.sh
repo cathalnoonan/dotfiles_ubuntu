@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 ##
-# Get current link from: https://github.com/nvm-sh/nvm
+# Find and install latest version of nvm.
 ##
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+NVM_LATEST_VERSION=$(curl -s "https://api.github.com/repos/nvm-sh/nvm/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v$NVM_LATEST_VERSION/install.sh | bash
 
 # Reload configurations
 source ~/.dotfiles/src/nvm/env.sh
