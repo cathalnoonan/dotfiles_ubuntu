@@ -37,7 +37,7 @@ jobs:
 
       # Pass Commit SHA here in case there are changes to setup.sh on the branch where action is running
       - name: Run setup script
-        run: /bin/bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
+        run: bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
 
       - name: Print out version numbers
         run: |-
