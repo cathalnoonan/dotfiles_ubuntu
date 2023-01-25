@@ -34,7 +34,6 @@ jobs:
         env:
           GITHUB: ${{ toJson(github) }}
           JOB: ${{ toJSON(job) }}
-          JOBS: ${{ toJSON(jobs) }}
           RUNNER: ${{ toJSON(runner) }}
 
       - name: Configure tzdata
