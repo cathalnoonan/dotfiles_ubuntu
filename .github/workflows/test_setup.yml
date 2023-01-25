@@ -17,7 +17,7 @@ jobs:
         image:
           - debian:10
           - debian:11
-          # - ubuntu:20.04  # See issue #2
+          - ubuntu:20.04
           - ubuntu:22.04
 
     container:
@@ -29,16 +29,9 @@ jobs:
       DOTFILES_COMMIT_SHA: ${{ github.sha }}
 
     steps:
-      - name: Debug info
-        run: echo "Check the logs"
-        env:
-          GITHUB: ${{ toJson(github) }}
-          JOB: ${{ toJSON(job) }}
-          RUNNER: ${{ toJSON(runner) }}
-
       - name: Configure tzdata
         run: apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
-        #if: 
+        if: ${{ matrix.image == 'ubuntu:20.04' }}
 
       - name: Install prerequisites for running inside docker container
         run: apt update && apt install -y sudo git
