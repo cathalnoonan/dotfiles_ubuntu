@@ -46,7 +46,10 @@ if [ "$DEBIAN_FRONTEND" != "noninteractive" ]; then
     # Run each install.sh where the user answered yes
     for install_folder in "${install_list[@]}"
     do
-        # Install $install_folder
+        echo
+        echo "------------------------------------------------------------------------"
+        echo "Installing $install_folder"
+        echo "------------------------------------------------------------------------"
         ~/.dotfiles/src/$install_folder/install.sh
     done
 
@@ -55,6 +58,10 @@ else
     # Run all "install.sh" files in nested folders
     for install_file in ~/.dotfiles/src/*/install.sh
     do
+        echo
+        echo "------------------------------------------------------------------------"
+        echo "Installing $install_file"
+        echo "------------------------------------------------------------------------"
         $install_file
     done
 
