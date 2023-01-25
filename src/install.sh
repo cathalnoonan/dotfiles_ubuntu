@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+# GitHub action logging functions
+gha_group_start() {
+    if [ "$GHA" != "" ]; then
+        echo "::group:: $1"
+    fi
+}
+gha_group_end() {
+    if [ "$GHA" != "" ]; then
+        echo "::endgroup::"
+    fi
+}
+
 # Install pre-requisites
 sudo apt-get update
 sudo apt install -y \
@@ -58,11 +70,13 @@ else
     # Run all "install.sh" files in nested folders
     for install_file in ~/.dotfiles/src/*/install.sh
     do
+        gha_group_start $install_file
         echo
         echo "------------------------------------------------------------------------"
         echo "Installing $install_file"
         echo "------------------------------------------------------------------------"
         $install_file
+        gha_group_end
     done
 
 fi
