@@ -29,6 +29,18 @@ jobs:
       DOTFILES_COMMIT_SHA: ${{ github.sha }}
 
     steps:
+      - name: Debug info
+        run: echo "Check the logs"
+        env:
+          GITHUB: ${{ toJson(github) }}
+          JOB: ${{ toJSON(job) }}
+          JOBS: ${{ toJSON(jobs) }}
+          RUNNER: ${{ toJSON(runner) }}
+
+      - name: Configure tzdata
+        run: apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
+        #if: 
+
       - name: Install prerequisites for running inside docker container
         run: apt update && apt install -y sudo git
 
