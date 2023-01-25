@@ -47,10 +47,12 @@ bashrc=$HOME/.bashrc
 cat $bashrc | grep -q "# dotfiles" || (
     echo "" >> $bashrc
     echo "# dotfiles" >> $bashrc
-    echo "if [ -f ~/.dotfiles/src/env.sh ]; then" >> $bashrc
-    echo "    source ~/.dotfiles/src/env.sh" >> $bashrc
+    echo "if [ -f $$HOME/.dotfiles/src/env.sh ]; then" >> $bashrc
+    echo "    source $$HOME/.dotfiles/src/env.sh" >> $bashrc
     echo "fi" >> $bashrc
     echo "" >> $bashrc
+
+    echo "Appended dotfiles"
 )
 source $bashrc
 gha_group_end
