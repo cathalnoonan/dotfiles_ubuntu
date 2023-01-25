@@ -45,7 +45,7 @@ jobs:
 
       - name: Print out version numbers
         run: |-
-          source ~/.bashrc
+          source ~/.dotfiles/src/env.sh
           exa --version
           docker --version
           dotnet --version
