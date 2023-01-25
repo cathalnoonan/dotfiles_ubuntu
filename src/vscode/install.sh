@@ -17,7 +17,7 @@ else
     rm -f packages.microsoft.gpg
 
     # Update package cache and install
-    sudo apt install -y apt-transport-https
-    sudo apt update
-    sudo apt install -y code # or code-insiders
+    sudo apt-get install -y apt-transport-https
+    sudo apt-get update
+    sudo apt-get install -y code # or code-insiders
 fi

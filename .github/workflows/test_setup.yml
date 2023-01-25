@@ -27,6 +27,7 @@ jobs:
     env:
       DEBIAN_FRONTEND: noninteractive
       DOTFILES_COMMIT_SHA: ${{ github.sha }}
+      GHA: 1
 
     steps:
       - name: Configure tzdata
