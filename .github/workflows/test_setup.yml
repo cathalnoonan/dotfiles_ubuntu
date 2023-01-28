@@ -2,6 +2,8 @@ name: Test Setup
 
 on:
   push:
+  schedule:
+    - cron: '0 10 * * SAT'
 
 defaults:
   run:
@@ -42,7 +44,7 @@ jobs:
 
       # Pass Commit SHA here in case there are changes to setup.sh on the branch where action is running
       - name: Run setup script
-        run: bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/setup.sh )"
+        run: bash -c "$( curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha || 'main' }}/setup.sh )"
 
       - name: Print out version numbers
         run: |-
