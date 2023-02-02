@@ -5,8 +5,8 @@
 # https://lindevs.com/install-exa-on-ubuntu
 ##
 
-sudo apt update
-sudo apt install -y unzip
+sudo apt-get update
+sudo apt-get install -y unzip
 
 EXA_LATEST_VERSION=$(curl -s "https://api.github.com/repos/ogham/exa/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
 

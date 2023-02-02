@@ -16,7 +16,7 @@ gha_group_end() {
 # Install prerequisites
 ##
 gha_group_start "Install git"
-sudo apt-get update && sudo apt install -y \
+sudo apt-get update && sudo apt-get install -y \
     git
 gha_group_end
 

@@ -37,7 +37,7 @@ jobs:
         if: ${{ matrix.image == 'ubuntu:20.04' }}
 
       - name: Install prerequisites for running inside docker container
-        run: apt update && apt install -y sudo git
+        run: apt-get update && apt-get install -y sudo git
 
       - name: Install general prerequisites
         run: sudo apt-get update && sudo apt-get -y install curl

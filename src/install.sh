@@ -15,7 +15,7 @@ gha_group_end() {
 # Install pre-requisites
 gha_group_start "Install prerequisites"
 sudo apt-get update
-sudo apt install -y \
+sudo apt-get install -y \
     curl \
     wget
 gha_group_end
