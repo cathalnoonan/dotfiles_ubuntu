@@ -13,9 +13,7 @@ fi
 sudo ln -s ~/.dotfiles/src/dotnet/microsoft-dotnet.pref /etc/apt/preferences.d/
 
 # Load the current Distro version
-source /etc/os-release
-DIST_NAME=$ID
-DIST_VERSION=$VERSION_ID
+source ~/.dotfiles/src/release_info.sh
 
 # Prepare installation materials for current distro
 wget https://packages.microsoft.com/config/$DIST_NAME/$DIST_VERSION/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
