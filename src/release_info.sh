@@ -5,7 +5,7 @@ DIST_NAME=$ID
 DIST_VERSION=$VERSION_ID
 
 # For Ubuntu and Debian, use the above information as-is
-if [[ "$DIST_NAME"=="ubuntu" || "$DIST_NAME"=="debian" ]]; then
+if [[ "$DIST_NAME" == "ubuntu" || "$DIST_NAME" == "debian" ]]; then
     export DIST_NAME=$DIST_NAME;
     export DIST_VERSION=$DIST_VERSION;
 elif [[ "$DIST_NAME"=="zorin" ]]; then
