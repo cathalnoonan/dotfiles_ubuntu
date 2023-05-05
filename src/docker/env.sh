@@ -27,4 +27,8 @@ function docker_tidy(){
         echo "No volumes to remove."
     fi
     echo;
+
+    echo "Cleaning system"
+    docker system prune --volumes
+    echo;
 }
