@@ -35,7 +35,7 @@ if grep -sq 'docker\|lxc' /proc/1/cgroup; then export DOTFILES_IS_DOCKER=1; fi
 ##
 color_blue="\[\033[01;34m\]"
 color_green="\[\033[01;32m\]"
-color_red="\[\033[0;91m\]"
+color_red="\[\033[1;91m\]"
 color_yellow="\[\033[0;93m\]"
 color_reset="\[\033[00m\]"
 parse_git_branch() {
