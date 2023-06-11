@@ -8,9 +8,7 @@ export DOTNET_NUGET_SIGNATURE_VERIFICATION=false
 ##
 # Include dotnet in PATH
 ##
-if [[ "$PATH" != *"$DOTNET_ROOT"* ]]; then
-    export PATH="$PATH:$DOTNET_ROOT"
-fi
+export PATH="$PATH:$DOTNET_ROOT"
 
 ##
 # Include dotnet tools folder in PATH

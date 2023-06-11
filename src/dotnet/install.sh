@@ -23,3 +23,8 @@ rm packages-microsoft-prod.deb
 # Install the SDK
 sudo apt-get update && \
     sudo apt-get install -y dotnet-sdk-6.0
+
+
+# Fix the following error message:
+#   The configured user limit (128) on the number of inotify instances has been reached, or the per-process limit on the number of open file descriptors has been reached.
+echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
