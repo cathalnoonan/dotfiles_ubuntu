@@ -42,5 +42,5 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export PS1="
-${debian_chroot:+($debian_chroot)}${color_green}\u@\h${color_reset}:${color_blue}\w${color_yellow}\$(parse_git_branch)$color_reset
-$ "
+${debian_chroot:+($debian_chroot)}${color_green}\u@\h${color_reset}:${color_blue}\w${color_yellow}\$(parse_git_branch)$color_reset $ "
+
