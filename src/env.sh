@@ -44,3 +44,8 @@ parse_git_branch() {
 export PS1="
 ${debian_chroot:+($debian_chroot)}${color_green}\u@\h${color_reset}:${color_blue}\w${color_yellow}\$(parse_git_branch)$color_reset $ "
 
+
+if [[ "$DEMO_MODE" == "1" ]] ; then
+export PS1="
+${color_blue}\w${color_yellow}\$(parse_git_branch)$color_reset $ "
+fi
