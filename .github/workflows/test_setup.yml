@@ -50,7 +50,7 @@ jobs:
       - name: Print out version numbers
         run: |-
           source ~/.dotfiles/src/env.sh
-          exa --version
-          docker --version
-          dotnet --version
-          nvm --version
+          echo "exa version: $(exa --version)"
+          echo "docker version: $(docker --version)"
+          echo dotnet version: $(dotnet --version)"
+          echo "nvm version: $(nvm --version)"
