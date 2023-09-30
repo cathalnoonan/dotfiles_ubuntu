@@ -21,8 +21,10 @@ sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
 
 # Install the SDK
-sudo apt-get update && \
-    sudo apt-get install -y dotnet-sdk-6.0
+sudo apt-get update
+sudo apt-get install -y \
+    dotnet-sdk-6.0 \
+    dotnet-sdk-7.0
 
 
 # Fix the following error message:
