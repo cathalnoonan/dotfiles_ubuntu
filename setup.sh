@@ -32,7 +32,7 @@ gha_group_end
 ##
 if [ -n "${DOTFILES_COMMIT_SHA}" ]; then
     gha_group_start "Checkout commit: $DOTFILES_COMMIT_SHA"
-    WORKING_DIRECTORY=`pwd`
+    WORKING_DIRECTORY=$(pwd)
     cd ~/.dotfiles
     git checkout $DOTFILES_COMMIT_SHA
     cd $WORKING_DIRECTORY

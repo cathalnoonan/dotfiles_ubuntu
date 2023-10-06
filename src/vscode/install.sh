@@ -9,6 +9,22 @@ if [ "$DOTFILES_IS_DOCKER$DOTFILES_IS_WSL" != "" ]; then
     echo "Skipping vscode install for non-interactive environment."
     echo
 else
+    config_folder_path="$HOME/.config/Code/User"
+    config_file_path="$config_folder_path/settings.json"
+    dotfiles_config_file_path="$HOME/.dotfiles/src/vscode/settings.json"
+
+    # Configure preferences
+    mkdir -p $HOME/.config/Code/User
+    if [[ -f "$config_file_path" ]]
+    then
+        echo "Removing existing settings file: $config_file_path"
+        rm "$config_file_path"
+    fi
+    echo "Symlinking config file from: $dotfiles_config_file_path"
+    ln -s "$dotfiles_config_file_path" "$config_file_path"
+    echo "Symlink created"
+
+
     # Add repository
     sudo apt-get install -y wget gpg
     wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
