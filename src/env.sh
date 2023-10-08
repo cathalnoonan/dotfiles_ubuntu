@@ -11,9 +11,50 @@ done
 ##
 # Handy functions
 ##
-function mkcd(){
+mkcd() {
     ## Make the new directory and CD into it
     mkdir -p "$@" && cd "$_";
+}
+command_exists () {
+    # Usage: command_exists some_command
+    # Example: command_exists git
+    command -v $1 >/dev/null 2>&1;
+}
+indent() {
+    # Usage: some_command | indent
+    # Example: git status | indent
+    sed "s/^/$(printf "%${1:-4}s")/"
+}
+indent_output_exec() {
+    # Usage: indent_output_exec some_command
+    # Example: indent_output_exec git status
+    local color_cyan="\033[1;36m"
+    local color_reset="\033[0m"
+    local command_exec="$@"
+    printf "${color_cyan}${command_exec}${color_reset}\n"
+    $command_exec | indent 4
+    echo;
+}
+big_update() {
+    local color_cyan="\033[1;36m"
+    local color_reset="\033[0m"
+
+    if command_exists apt-get
+    then
+        indent_output_exec sudo apt-get update
+        indent_output_exec sudo apt-get upgrade
+        indent_output_exec sudo apt-get autoremove --purge
+    fi
+
+    if command_exists snap
+    then
+        indent_output_exec sudo snap refresh
+    fi
+
+    if command_exists flatpak
+    then
+        indent_output_exec flatpak update
+    fi
 }
 
 ##
