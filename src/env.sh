@@ -25,14 +25,14 @@ indent() {
     # Example: git status | indent
     sed "s/^/$(printf "%${1:-4}s")/"
 }
-indent_output_exec() {
-    # Usage: indent_output_exec some_command
-    # Example: indent_output_exec git status
+print_then_exec() {
+    # Usage: print_then_exec some_command
+    # Example: print_then_exec git status
     local color_cyan="\033[1;36m"
     local color_reset="\033[0m"
     local command_exec="$@"
     printf "${color_cyan}${command_exec}${color_reset}\n"
-    $command_exec | indent 4
+    $command_exec
     echo;
 }
 big_update() {
@@ -41,19 +41,19 @@ big_update() {
 
     if command_exists apt-get
     then
-        indent_output_exec sudo apt-get update
-        indent_output_exec sudo apt-get upgrade
-        indent_output_exec sudo apt-get autoremove --purge
+        print_then_exec sudo apt-get update
+        print_then_exec sudo apt-get upgrade
+        print_then_exec sudo apt-get autoremove --purge
     fi
 
     if command_exists snap
     then
-        indent_output_exec sudo snap refresh
+        print_then_exec sudo snap refresh
     fi
 
     if command_exists flatpak
     then
-        indent_output_exec flatpak update
+        print_then_exec flatpak update
     fi
 }
 
