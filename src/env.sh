@@ -39,6 +39,11 @@ big_update() {
     local color_cyan="\033[1;36m"
     local color_reset="\033[0m"
 
+    ##
+    # Do something with sudo so the password prompt comes up early.
+    ##
+    sudo echo ""
+
     if command_exists apt-get
     then
         print_then_exec sudo apt-get update
@@ -53,7 +58,7 @@ big_update() {
 
     if command_exists flatpak
     then
-        print_then_exec flatpak update
+        print_then_exec sudo flatpak update
     fi
 }
 
