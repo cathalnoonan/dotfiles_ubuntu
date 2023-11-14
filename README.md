@@ -3,6 +3,7 @@ Sets up my Ubuntu/Debian environment for development.
 > **Tested on**:
 > - Debian 10 (WSL and Docker)
 > - Debian 11 (WSL and Docker)
+> - Debian 12 (Docker)
 > - Ubuntu 20.04 (WSL)
 > - Ubuntu 22.04 (WSL and Docker)
 

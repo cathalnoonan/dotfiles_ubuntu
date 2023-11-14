@@ -2,5 +2,6 @@
     "workbench.colorTheme": "Default Dark+",
     "window.titleBarStyle": "custom",
     "editor.renderWhitespace": "all",
-    "editor.pasteAs.showPasteSelector": "never"
+    "editor.pasteAs.showPasteSelector": "never",
+    "git.autofetch": true
 }
