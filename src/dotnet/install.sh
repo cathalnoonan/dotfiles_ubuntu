@@ -30,4 +30,12 @@ sudo apt-get install -y \
 
 # Fix the following error message:
 #   The configured user limit (128) on the number of inotify instances has been reached, or the per-process limit on the number of open file descriptors has been reached.
-echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+text_to_find="The configured user limit (128) on the number of inotify instances has been reached, or the per-process limit on the number of open file descriptors has been reached."
+if ! grep -Fq "$text_to_find" /etc/sysctl.conf
+then
+    echo "" | sudo tee -a /etc/sysctl.conf
+    echo "###################################################################" | sudo tee -a /etc/sysctl.conf
+    echo "# Fix: '$text_to_find'" | sudo tee -a /etc/sysctl.conf
+    echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf
+    sudo sysctl -p
+fi
