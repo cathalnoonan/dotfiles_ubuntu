@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: Configure tzdata
         run: apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
-        if: ${{ matrix.image == 'ubuntu:20.04' }}
+        if: contains(matrix.image, 'ubuntu')
 
       - name: Install prerequisites for running inside docker container
         run: apt-get update && apt-get install -y sudo git
@@ -54,4 +54,5 @@ jobs:
           echo "eza version: $(eza --version)"
           echo "docker version: $(docker --version)"
           echo "dotnet version: $(dotnet --version)"
+          echo "flatpak version: $(flatpak --version)"
           echo "nvm version: $(nvm --version)"
