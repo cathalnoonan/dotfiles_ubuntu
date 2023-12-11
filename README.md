@@ -9,6 +9,7 @@ Sets up my Ubuntu/Debian environment for development.
 
 ## GitHub Action checks
 [![Test Setup](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/test_setup.yml/badge.svg)](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/test_setup.yml)
+[![Validate EditorConfig](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/validate_editorconfig.yml/badge.svg)](https://github.com/cathalnoonan/dotfiles_ubuntu-and-debian/actions/workflows/validate_editorconfig.yml)
 
 ---
 
