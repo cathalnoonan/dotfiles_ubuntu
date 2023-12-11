@@ -1,7 +1,8 @@
 {
-    "workbench.colorTheme": "Default Dark+",
-    "window.titleBarStyle": "custom",
     "editor.renderWhitespace": "all",
     "editor.pasteAs.showPasteSelector": "never",
-    "git.autofetch": true
+    "git.autofetch": true,
+    "git.openRepositoryInParentFolders": "always",
+    "window.titleBarStyle": "custom",
+    "workbench.colorTheme": "Default Dark+"
 }
