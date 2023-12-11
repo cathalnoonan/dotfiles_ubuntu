@@ -19,7 +19,7 @@ sudo apt-get -y install \
 
 # GPG key
 source ~/.dotfiles/src/release_info.sh
-curl -fsSL https://download.docker.com/linux/${DIST_NAME}/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg 
+curl -fsSL https://download.docker.com/linux/${DIST_NAME}/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 # Use stable repository for Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
