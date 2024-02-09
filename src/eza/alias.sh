@@ -4,7 +4,7 @@
 # Alias "ls" to eza
 ##
 if [ -x "$(command -v eza)" ]; then
-    alias ls='eza -laFh --git'
-    alias eza='eza -laFh --git'
+    alias ls='eza -lahF --git'
+    alias eza='eza -lahF --git'
     alias exa='eza'
 fi
