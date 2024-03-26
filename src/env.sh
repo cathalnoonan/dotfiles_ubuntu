@@ -1,21 +1,14 @@
 #!/usr/bin/env bash
 
 ##
-# Load other "env.sh" files in nested folders
-##
-for env_file in ~/.dotfiles/src/*/env.sh
-do
-    . $env_file
-done
-
-##
 # Handy functions
 ##
 mkcd() {
     ## Make the new directory and CD into it
+    # Example: mkcd ~/git/
     mkdir -p "$@" && cd "$_";
 }
-command_exists () {
+command_exists() {
     # Usage: command_exists some_command
     # Example: command_exists git
     command -v $1 >/dev/null 2>&1;
@@ -25,20 +18,35 @@ indent() {
     # Example: git status | indent
     sed "s/^/$(printf "%${1:-4}s")/"
 }
-print_then_exec() {
-    # Usage: print_then_exec some_command
-    # Example: print_then_exec git status
+
+print_color_cyan() {
+    local message="$1"
     local color_cyan="\033[1;36m"
     local color_reset="\033[0m"
+    printf "${color_cyan}${message}${color_reset}\n"
+}
+print_color_red() {
+    local message="$1"
+    local color_red="\033[1;91m"
+    local color_reset="\033[0m"
+    printf "${color_red}${message}${color_reset}\n"
+}
+print_color_cyan_then_exec() {
+    # Usage: print_color_cyan_then_exec some_command
+    # Example: print_color_cyan_then_exec git status
     local command_exec="$@"
-    printf "${color_cyan}${command_exec}${color_reset}\n"
+    print_color_cyan "${command_exec}"
     $command_exec
     echo;
 }
-big_update() {
-    local color_cyan="\033[1;36m"
-    local color_reset="\033[0m"
+print_then_exec() {
+    # Usage: print_then_exec some_command
+    # Example: print_then_exec git status
+    local command_exec="$@"
+    print_color_cyan_then_exec "${command_exec}"
+}
 
+big_update() {
     ##
     # Do something with sudo so the password prompt comes up early.
     ##
@@ -63,6 +71,14 @@ big_update() {
         print_then_exec sudo flatpak update
     fi
 }
+
+##
+# Load other "env.sh" files in nested folders
+##
+for env_file in ~/.dotfiles/src/*/env.sh
+do
+    . $env_file
+done
 
 ##
 # Load aliases in nested folders
