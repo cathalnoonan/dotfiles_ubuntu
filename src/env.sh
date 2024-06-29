@@ -54,11 +54,10 @@ big_update() {
 
     if command_exists apt-get
     then
-        print_then_exec sudo apt-get update
-        print_then_exec sudo apt-get upgrade
-        print_then_exec sudo apt-get dist-upgrade
+        print_then_exec sudo apt-get update && \
+        print_then_exec sudo apt-get upgrade && \
+        print_then_exec sudo apt-get dist-upgrade && \
         print_then_exec sudo apt-get autoremove --purge
-        print_then_exec sudo apt-get clean
     fi
 
     if command_exists snap
